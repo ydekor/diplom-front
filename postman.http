@@ -1,0 +1,24 @@
+POST https://dev.routineninja.com/api/user/login
+Content-Type: application/json
+
+{
+  "login": "1111",
+  "password": "1111"
+}
+
+###
+GET https://dev.routineninja.com/api/user/login
+
+###
+DELETE http://localhost:9000/user/52
+
+###
+PUT http://localhost:9000/user
+Content-Type: application/json
+
+{
+  "id": 52,
+  "username": "aboba",
+  "password": "22222",
+  "email": "ananas@yandex.ru"
+}

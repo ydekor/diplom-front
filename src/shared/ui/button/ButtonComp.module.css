@@ -1,0 +1,55 @@
+.wrapper {
+    display: flex;
+    user-select: none;
+    min-height: 2em;
+    flex-direction: column;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 30px;
+}
+
+.textElement {
+    display: flex;
+    flex: 1;
+    padding-left: 20px;
+    color: var(--header-text-color)
+}
+
+.iconElement {
+    display: flex;
+}
+
+.iconElementWrapper {
+    display: flex;
+    justify-content: center;
+    width: 48px;
+}
+
+.wrapper:hover {
+    background-color: rgba(159, 155, 155, 0.35);
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 360px;
+}
+
+.united {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.unitedText {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.unitedIcon {
+    margin-left: 10px;
+}

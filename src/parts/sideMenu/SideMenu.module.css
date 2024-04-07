@@ -1,0 +1,43 @@
+.sideMenu {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    background-color: var(--sideMenu-background-color);
+    transition: width 0.1s ease, visibility 0.1s ease;
+    overflow: hidden;
+    visibility: visible;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.hideButtonWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.hideButton {
+    cursor: pointer;
+}
+
+.buttonWrapper {
+    margin-top: 10px;
+}
+
+.icon {
+    color: var(--header-text-color);
+    width: 24px;
+    height: 24px;
+}
+
+.button {
+    margin: 0 10px 0 10px;
+}
+
+.hideIcon {
+    color: var(--header-text-color);
+    width: 24px;
+    height: 24px;
+}
