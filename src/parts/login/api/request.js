@@ -11,7 +11,6 @@ export const loginUser = (username, password, history) => {
             if(response.ok) {
                 history('/')
             }
-            console.log(response)
         },
         'multipart/form-data'
     )

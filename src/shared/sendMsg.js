@@ -2,7 +2,7 @@ const sendRequest = (destination, method, bodyObj, successHandler, contentType =
     const requestOptions = {
         method,
         headers: {},
-        body: null,
+        body: method !== 'GET' ? bodyObj : null,
     }
 
     if (contentType === 'application/json') {
@@ -16,7 +16,6 @@ const sendRequest = (destination, method, bodyObj, successHandler, contentType =
 
     fetch(destination, requestOptions)
         .then(response => {
-            console.log(response, "ananas")
             if(!response.ok) {
                 throw new Error(`${response.status}`)
             }
