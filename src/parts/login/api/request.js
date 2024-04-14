@@ -1,17 +1,22 @@
 import {sendPostMsg} from "../../../shared/sendMsg";
+import {setLocalStorageValue} from "../../../shared/hooks/LocalStorage";
+import {AUTH} from "../../../shared/const/Structures";
 
-export const loginUser = (username, password, history) => {
-    const formData = new FormData()
-    formData.append('username', username)
-    formData.append('password', password)
+export const loginUser = (username, password, setIsAuthenticated, setUserData, history) => {
+    setLocalStorageValue(AUTH.TOKEN, null, true)
+    setLocalStorageValue(AUTH.TOKEN_REFRESH, null, true)
 
-    sendPostMsg('http://localhost:9000/api/auth/login',
-        formData,
-        (response) => {
-            if(response.ok) {
-                history('/')
-            }
+    sendPostMsg("http://localhost:9000/user/login",
+        {
+            "login": username,
+            "password": password
         },
-        'multipart/form-data'
+        (response) => {
+            setLocalStorageValue(AUTH.TOKEN, response[AUTH.TOKEN])
+            setLocalStorageValue(AUTH.TOKEN_REFRESH, response[AUTH.TOKEN_REFRESH])
+            setIsAuthenticated(true)
+            setUserData(response[AUTH.USER_DATA])
+            history("/")
+        }
     )
 }

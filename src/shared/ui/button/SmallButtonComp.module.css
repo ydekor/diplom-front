@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    user-select: none;
+    flex-direction: column;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    /*flex: 1;*/
+    cursor: pointer;
+    min-width: 32px;
+    min-height: 32px;
+    justify-content: center;
+}
+
+.wrapper:hover {
+    background-color: rgba(159, 155, 155, 0.35);
+    min-width: 32px;
+    min-height: 32px;
+    /*border-radius: 360px;*/
+    border-radius: 50%;
+    /*border: 1px solid transparent;*/
+}

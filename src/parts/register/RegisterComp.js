@@ -44,7 +44,6 @@ export const RegisterComp = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
-            {/**/}
             <div className={style.panel}>
                 <button onClick={() => {
                     RegisterUser(login, password, email, clearField, history)

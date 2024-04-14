@@ -1,24 +1,17 @@
 .wrapper {
+    width: 100%;
+    min-width: 0;
+}
+
+.content {
+    /*border: 1px solid red;*/
+    /*margin: 0 auto;*/
     display: flex;
-    flex: 1;
-    justify-content: center;
-    margin-top: 20px;
 }
 
-.inputField {
-
-}
-
-.wrapper {
-
-}
-
-.input {
-    border: none;
-    font-size: 1.1em;
-    background-color: var(--header-background-color);
-}
-
-.input:focus {
-    outline: none;
+.noteWrapper {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }

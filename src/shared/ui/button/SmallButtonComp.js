@@ -1,10 +1,9 @@
 import {useId} from "react";
-import style from "./ButtonComp.module.css"
+import style from "./SmallButtonComp.module.css";
 import {Tooltip} from "react-tooltip";
 
-export const ButtonComp = ({
+export const SmallButtonComp = ({
                                icon,
-                               text,
                                tooltipText,
                                onClick,
                            }) => {
@@ -12,10 +11,7 @@ export const ButtonComp = ({
 
     return <div data-tooltip-id={id} className={style.wrapper}>
         <div className={style.contentContainer} onClick={onClick}>
-            <div className={style.iconElementWrapper}>
-                {icon && <div className={style.iconElement}>{icon}</div>}
-            </div>
-            {text && <div className={style.textElement}>{text}</div>}
+            {icon}
         </div>
         {<Tooltip
             style={{zIndex: 5}}

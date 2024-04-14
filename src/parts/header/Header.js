@@ -5,14 +5,26 @@ import {PiList} from "react-icons/pi";
 import {BsFillCloudMoonFill, BsFillCloudSunFill} from "react-icons/bs";
 import {useContext} from "react";
 import {ThemeContext} from "../../providers/ThemeProvider";
-import {useNavigate} from "react-router-dom";
+import {setLocalStorageValue} from "../../shared/hooks/LocalStorage";
+import {AUTH} from "../../shared/const/Structures";
+import {useApp} from "../../shared/hooks/useApp";
 
-export const Header = ({setMenuVisible, menuVisible}) => {
-    const history = useNavigate()
+export const Header = ({
+                           menuVisible,
+                           setMenuVisible
+                       }) => {
     const [theme, setTheme] = useContext(ThemeContext)
+    const {data} = useApp()
 
     const changeTheme = () => {
         setTheme(theme === "light" ? "dark" : "light")
+    }
+
+    const logout = () => {
+        data.setIsAuthenticated(false)
+        setLocalStorageValue(AUTH.TOKEN, "", true)
+        setLocalStorageValue(AUTH.TOKEN_REFRESH, "", true)
+        data.setUserData({})
     }
 
     return <div className={style.wrapper}>
@@ -42,8 +54,8 @@ export const Header = ({setMenuVisible, menuVisible}) => {
             <div className={style.button}>
                 <ButtonComp
                     icon={<BiLogIn className={style.icon}/>}
-                    tooltipText={"login"}
-                    onClick={() => history("/login")}
+                    tooltipText={"Logout"}
+                    onClick={logout}
                 />
             </div>
         </div>

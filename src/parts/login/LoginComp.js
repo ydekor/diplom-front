@@ -2,8 +2,10 @@ import style from "./LoginComp.module.css"
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {loginUser} from "./api/request";
+import {useApp} from "../../shared/hooks/useApp";
 
 export const LoginComp = () => {
+    const {data} = useApp()
     const history = useNavigate()
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -38,7 +40,7 @@ export const LoginComp = () => {
                     if (username === "" && password === "") {
                         console.log("netak ebanat")
                     } else {
-                        loginUser(username, password, history)
+                        loginUser(username, password, data.setIsAuthenticated, data.setUserData, history)
                     }
                 }}>Login</button>
             </div>
