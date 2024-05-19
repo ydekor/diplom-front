@@ -3,7 +3,7 @@
     min-width: 500px;
     flex-direction: column;
     border-radius: 6px;
-    background-color: white;
+    background-color: var(--sideMenu-background-color);
 }
 
 .colorPickerContainer {
@@ -45,6 +45,8 @@
     margin: 5px;
     padding: 5px;
     font-size: 25px;
+    color: var(--note-text-color);
+    background-color: var(--sideMenu-background-color);
 }
 
 .inputTitle:focus {
@@ -52,11 +54,12 @@
 }
 
 .inputText {
+    color: var(--note-text-color);
     border: none;
     margin: 5px;
     padding: 5px;
     font-size: 19px;
-    /*background-color: #fbfbfb;*/
+    background-color: var(--sideMenu-background-color);
 }
 
 .inputText:focus {

@@ -1,5 +1,5 @@
 .modal {
-    background-color: #ddddddad;
+    background-color: var(--modal-background-color);
     position: fixed;
     top: 0;
     right: 0;
@@ -12,10 +12,9 @@
 }
 
 .container {
-    box-shadow: #b4c1cd9e 2px 3px 7px 1px;
     /*padding: 4px;*/
     border-radius: 6px;
-    background-color: #fbfbfb;
+    /*background-color: #fbfbfb;*/
 }
 
 .hidden {

@@ -2,11 +2,12 @@
     display: flex;
     min-width: 250px;
     flex-direction: column;
-    border: 1px solid var(--header-background-color);
-    border-color: #e0e0e0;
+    border: 1px solid var(--note-border-color);
+    border-color: var(--note-border-color);
     border-radius: 5px;
     position: relative;
     margin: 10px;
+    background-color: var(--sideMenu-background-color);
 }
 
 .wrapper:hover {
@@ -36,7 +37,7 @@
 }
 
 .textField {
-    color: var(--header-text-color);
+    color: var(--note-text-color);
     margin: 0 10px 10px 10px;
     letter-spacing: .00625em;
     font-family: "Google Sans", Roboto, Arial, sans-serif;
@@ -46,7 +47,7 @@
 }
 
 .headerField {
-    color: var(--header-text-color);
+    color: var(--note-text-color);
     margin: 10px 10px 10px 10px;
     letter-spacing: .00625em;
     font-family: "Google Sans", Roboto, Arial, sans-serif;

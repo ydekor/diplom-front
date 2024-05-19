@@ -12,12 +12,26 @@ body {
     --header-background-color: #ffffff;
     --header-text-color: rgb(65 80 93);
 
-    --sideMenu-background-color: #f9f9f9
+    --sideMenu-background-color: #f9f9f9;
+
+    --box-shadow-color: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+
+    --note-border-color: rgba(79, 79, 73, 0.19);
+    --note-text-color: #202124;
+
+    --modal-background-color: rgba(47, 45, 45, 0.34);
 }
 
 body.dark {
     --header-background-color: rgb(65 80 93);
     --header-text-color: #e1dada;
 
-    --sideMenu-background-color: #424242
+    --sideMenu-background-color: #424242;
+
+    --box-shadow-color: 0 1px 2px 0 rgba(227, 232, 236, 0.3), 0 2px 6px 2px rgba(235, 242, 243, 0.15);
+
+    --note-border-color: rgba(173, 170, 170, 0.18);
+    --note-text-color: #e8eaed;
+
+    --modal-background-color: rgba(32, 33, 36, 0.57);
 }
