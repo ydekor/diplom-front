@@ -1,0 +1,61 @@
+.wrapper {
+    min-width: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.shareContent {
+    padding: 15px 15px 0;
+}
+
+.input {
+    flex: 1 0 auto;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    color: #3c4043;
+    font-size: 13px;
+    font-family: "Roboto", arial, sans-serif;
+    height: 25px;
+    outline: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.topText {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+    font-size: 18px;
+    font-weight: 500;
+    height: 25px;
+    padding: 0 0 10px 0;
+}
+
+.shareButton:hover {
+    background-color: #3c4043;
+    color: #e1dada;
+}
+
+.shareButton {
+    border: none;
+    user-select: none;
+    margin-right: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    height: 36px;
+    padding: 4px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonWrapper {
+    display: flex;
+    flex: 1;
+    margin: 0 7px 7px 7px;
+    justify-content: flex-end;
+}

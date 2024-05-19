@@ -6,7 +6,7 @@ export const createNote = (header, text, successHandler) => {
             "title": header,
             "noteType": "TEXT",
             "text": text,
-            "backgroundColor": "green"
+            "backgroundColor": "fff"
         },
         successHandler
     )
@@ -26,9 +26,26 @@ export const deleteNote = (id, successHandler) => {
     )
 }
 
+export const shareNote = (id, userEmail, successHandler) => {
+    sendPutMsg("http://localhost:9000/note/share",
+        {
+            noteId: id,
+            userEmail: userEmail
+        },
+        successHandler
+    )
+}
+
 export const updateNote = (newNote, successHandler) => {
     sendPutMsg("http://localhost:9000/note",
         newNote,
+        successHandler
+    )
+}
+
+export const getOneNoteById = (id, successHandler) => {
+    sendGetMsg("http://localhost:9000/note/" + id,
+        {},
         successHandler
     )
 }

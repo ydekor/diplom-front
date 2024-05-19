@@ -5,6 +5,7 @@ import {App} from "./app/App";
 import {BrowserRouter} from "react-router-dom";
 import {ThemeProvider} from "./providers/ThemeProvider";
 import {AppDataProvider} from "./shared/hooks/useApp";
+import {ModalDataProvider} from "./shared/hooks/useModal";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,9 @@ root.render(
       <BrowserRouter>
           <ThemeProvider>
               <AppDataProvider>
-                <App/>
+                  <ModalDataProvider>
+                      <App/>
+                  </ModalDataProvider>
               </AppDataProvider>
           </ThemeProvider>
       </BrowserRouter>

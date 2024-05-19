@@ -1,0 +1,64 @@
+.wrapper {
+    display: flex;
+    min-width: 500px;
+    flex-direction: column;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.colorPickerContainer {
+    position: absolute;
+    /*bottom: 0;*/
+}
+
+.colorPicker {
+    position: absolute;
+    top: 30px;
+    left: -223px;
+    z-index: 9999;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    color: var(--header-text-color);
+}
+
+.button {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonWrapper {
+    display: flex;
+    flex: 1;
+    margin: 0 7px 7px 7px;
+    justify-content: flex-end;
+}
+
+.inputTitle {
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    font-size: 25px;
+}
+
+.inputTitle:focus {
+    outline: none;
+}
+
+.inputText {
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    font-size: 19px;
+    /*background-color: #fbfbfb;*/
+}
+
+.inputText:focus {
+    outline: none;
+}

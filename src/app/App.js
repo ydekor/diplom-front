@@ -9,6 +9,7 @@ import {getLocalStorageValue} from "../shared/hooks/LocalStorage";
 import {AUTH} from "../shared/const/Structures";
 import {getUserInfo} from "./api/request";
 import {useApp} from "../shared/hooks/useApp";
+import {ModalWindow} from "../shared/ui/ModalWindow/ModalWindow";
 
 export const App = () => {
   const {data} = useApp()
@@ -25,6 +26,7 @@ export const App = () => {
   useEffect(loginCheck,[data.isAuthenticated])
 
   return <div className={style.wrapper}>
+    <ModalWindow/>
     <Routes>
       <Route path={"/"} element={<Main/>}/>
       <Route path={"/:tab"} element={<Main/>}/>

@@ -1,5 +1,5 @@
 import {createContext, useContext, useState} from "react";
-import {createNote, deleteNote, getNotes, updateNote} from "../../parts/reminders/api/request";
+import {createNote, deleteNote, getNotes, shareNote, updateNote} from "../../parts/reminders/api/request";
 
 const AppDataContext = createContext(null)
 
@@ -11,6 +11,8 @@ export const AppDataProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [userData, setUserData] = useState({})
     const [notes, setNotes] = useState([])
+    // const [note, setNote] = useState([])
+    const [currentNoteId, setCurrentNoteId] = useState(null)
 
     const refreshData = () => {
         getNotes(setNotes)
@@ -28,6 +30,14 @@ export const AppDataProvider = ({children}) => {
         updateNote(newNote, refreshData)
     }
 
+    const shareSelectedNote = (id, userEmail) => {
+        shareNote(id, userEmail, refreshData)
+    }
+
+    // const getOneNote = (id) => {
+    //     getOneNoteById(id, setNote)
+    // }
+
     const combinedData = {
         data: {
             isAuthenticated: isAuthenticated,
@@ -36,10 +46,16 @@ export const AppDataProvider = ({children}) => {
             setUserData: setUserData,
         },
         noteData: {
+            // setNote: setNote,
+            // note: note,
             notes: notes,
             setNotes: setNotes,
+            setCurrentNoteId: setCurrentNoteId,
+            currentNoteId: currentNoteId,
         },
         func: {
+            shareSelectedNote: shareSelectedNote,
+            // getOneNote: getOneNote,
             createNewNote: createNewNote,
             refreshData: refreshData,
             updateCurrentNote: updateCurrentNote,
