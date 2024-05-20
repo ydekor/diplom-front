@@ -6,9 +6,13 @@ import {IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
 import {Notes} from "../notes/Notes";
 import {useNavigate, useParams} from "react-router-dom";
 import {Reminders} from "../reminders/Reminders";
+import {GoPencil} from "react-icons/go";
+import {useModal} from "../../shared/hooks/useModal";
+import {Labels} from "../labels/Labels";
 
 export const SideMenu = ({menuVisible, setMenuVisible}) => {
     const history = useNavigate()
+    const {modal} = useModal()
     const {tab} = useParams()
 
     const toggleMenuVisibility = () => {
@@ -32,6 +36,13 @@ export const SideMenu = ({menuVisible, setMenuVisible}) => {
                             icon={<LuBellRing className={style.icon}/>}
                             text={"Reminders"}
                             onClick={() => history("/reminders")}
+                        />
+                    </div>
+                    <div className={style.button}>
+                        <ButtonComp
+                            icon={<GoPencil className={style.icon}/>}
+                            text={"Edit labels"}
+                            onClick={() => modal.open(<Labels/>)}
                         />
                     </div>
                 </div>

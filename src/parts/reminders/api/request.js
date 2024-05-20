@@ -49,3 +49,32 @@ export const getOneNoteById = (id, successHandler) => {
         successHandler
     )
 }
+
+export const createTag = (tagName) => {
+    sendPostMsg("http://localhost:9000/tag",
+        {
+            "tagName": tagName,
+        }
+    )
+}
+
+export const getTag = (successHandler) => {
+    sendGetMsg("http://localhost:9000/tag",
+        {},
+        successHandler,
+    )
+}
+
+export const deleteTag = (id, successHandler) => {
+    sendDeleteMsg("http://localhost:9000/tag" + "/" + id,
+        {},
+        successHandler
+    )
+}
+
+export const updateTag = (newTag, successHandler) => {
+    sendPutMsg("http://localhost:9000/tag",
+        newTag,
+        successHandler
+    )
+}
