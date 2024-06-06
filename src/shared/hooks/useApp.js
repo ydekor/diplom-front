@@ -1,5 +1,5 @@
-import {createContext, useContext, useState} from "react";
-import {createNote, deleteNote, getNotes, shareNote, updateNote} from "../../parts/reminders/api/request";
+import {createContext, useContext, useEffect, useState} from "react";
+import {createNote, deleteNote, getNotes, getTag, shareNote, updateNote} from "../../parts/reminders/api/request";
 
 const AppDataContext = createContext(null)
 
@@ -11,8 +11,16 @@ export const AppDataProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [userData, setUserData] = useState({})
     const [notes, setNotes] = useState([])
-    // const [note, setNote] = useState([])
     const [currentNoteId, setCurrentNoteId] = useState(null)
+    const [labels, setLabels] = useState("")
+
+    const refreshLabelsData = () => {
+        getTag(setLabels)
+    }
+
+    useEffect(() => {
+        refreshLabelsData()
+    }, [])
 
     const refreshData = () => {
         getNotes(setNotes)
@@ -34,10 +42,6 @@ export const AppDataProvider = ({children}) => {
         shareNote(id, userEmail, refreshData)
     }
 
-    // const getOneNote = (id) => {
-    //     getOneNoteById(id, setNote)
-    // }
-
     const combinedData = {
         data: {
             isAuthenticated: isAuthenticated,
@@ -46,16 +50,18 @@ export const AppDataProvider = ({children}) => {
             setUserData: setUserData,
         },
         noteData: {
-            // setNote: setNote,
-            // note: note,
             notes: notes,
             setNotes: setNotes,
             setCurrentNoteId: setCurrentNoteId,
             currentNoteId: currentNoteId,
         },
+        labelData: {
+            refreshLabelsData: refreshLabelsData,
+            labels: labels,
+            setLabels: setLabels,
+        },
         func: {
             shareSelectedNote: shareSelectedNote,
-            // getOneNote: getOneNote,
             createNewNote: createNewNote,
             refreshData: refreshData,
             updateCurrentNote: updateCurrentNote,

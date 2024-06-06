@@ -45,20 +45,6 @@ export const LoginComp = () => {
                 }}>Login</button>
             </div>
 
-            <div>
-                <button onClick={() => {
-                    fetch("http://localhost:9000/user/whoareme", {
-                        method: "GET",
-                    }).then(r => {
-                        console.log(r.status, "status")
-                        return r.text()
-                    })
-                        .then((r) => console.log(r))
-                        .catch((error) => console.error(error, "anmanas"))
-                }}>
-                    whoareme
-                </button>
-            </div>
         </div>
 
         <div className={style.links}>

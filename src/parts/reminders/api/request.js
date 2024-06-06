@@ -50,11 +50,12 @@ export const getOneNoteById = (id, successHandler) => {
     )
 }
 
-export const createTag = (tagName) => {
+export const createTag = (tagName, successHandler) => {
     sendPostMsg("http://localhost:9000/tag",
         {
             "tagName": tagName,
-        }
+        },
+        successHandler
     )
 }
 
@@ -76,5 +77,14 @@ export const updateTag = (newTag, successHandler) => {
     sendPutMsg("http://localhost:9000/tag",
         newTag,
         successHandler
+    )
+}
+
+export const addTag = (noteId, tagId) => {
+    sendPostMsg("http://localhost:9000/note/tag",
+        {
+            "noteId": noteId,
+            "tagId": tagId,
+        },
     )
 }
